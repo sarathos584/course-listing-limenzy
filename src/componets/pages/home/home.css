@@ -11,3 +11,14 @@
 .banner .container h1 {
   text-transform: capitalize;
 }
+.banner .row {
+  gap: 1rem;
+}
+.reviews .row{
+  row-gap: 2rem;
+}
+.reviews .cards .card-wrap{
+ padding: 15px;
+ border: 1px solid black;
+ height: 100%;
+}
