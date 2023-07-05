@@ -1,0 +1,13 @@
+.banner {
+  background: url(../../../assets/banner-img.jpg);
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner .container {
+  min-height: 500px;
+  max-height: 100%;
+}
+.banner .container h1 {
+  text-transform: capitalize;
+}
