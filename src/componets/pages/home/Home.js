@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import "./home.css";
 import { CourseDataContext } from "../CourseDataContext";
+import { Rating } from "@mui/material";
 
 const Home = () => {
-  // const [reviewer,setReviewer] = useState('');
-  // const 
   const { courses, setCourses, reviews, setReviews } =
     useContext(CourseDataContext);
   const sortedCourses = courses.sort((a, b) => b.rating - a.rating);
   const topTwoCourses = sortedCourses.slice(0, 2);
+ 
   return (
     <>
       <section className="banner container-fluid">
@@ -25,9 +25,9 @@ const Home = () => {
             {topTwoCourses.map((course) => {
               return (
                 <div className="cards col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div className="card px-3 py-4">
+                  <div className="card px-3 py-4 align-items-center">
                     <h1>{course.courseName}</h1>
-                    <p>rating: {course.rating}</p>
+                    <Rating  name="read-only" value={course.rating} readOnly />
                     <p>placement rate : {course.placementRate}</p>
                   </div>
                 </div>
@@ -47,19 +47,13 @@ const Home = () => {
                     <p> user name : {review.reviwer}</p>
                     <p>{review.courseName}</p>
                     <p>{review.review}</p>
-                    <p>rating : {review.rating}</p>
+                    <Rating name="read-only" value={review.rating} readOnly />
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className="review-form">
-            <form action="">
-              <input type="text" />
-            </form>
-          </div>
         </div>
-
       </section>
     </>
   );
